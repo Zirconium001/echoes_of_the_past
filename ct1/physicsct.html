@@ -1,0 +1,99 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Batch Selector</title>
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      overflow: hidden;
+    }
+
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      transition: background 1s ease;
+      color: white;
+    }
+
+    h1 {
+      font-size: 2.5em;
+      font-weight: bold;
+      margin-bottom: 40px;
+      text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+    }
+
+    .button-stack {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .button-stack a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(255, 255, 255, 0.1);
+      color: white;
+      text-decoration: none;
+      border: 2px solid rgba(255, 255, 255, 0.3);
+      padding: 15px 30px;
+      font-size: 1em;
+      font-weight: bold;
+      border-radius: 8px;
+      cursor: pointer;
+      backdrop-filter: blur(6px);
+      transition: all 0.3s ease;
+      min-width: 200px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    }
+
+    .button-stack a:hover {
+      background: rgba(255, 255, 255, 0.3);
+      color: black;
+      transform: scale(1.05);
+    }
+
+    .button-stack a:active {
+      transform: scale(0.97);
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Select The Batch</h1>
+
+  <div class="button-stack">
+    <a href="pdfs/b55phyct.pdf">BATCH 55</a>
+    </div>
+
+  <script>
+    const backgrounds = [
+      "linear-gradient(135deg, #FF6B6B, #FFD93D)",
+      "linear-gradient(135deg, #6BCB77, #4D96FF)",
+      "linear-gradient(135deg, #B983FF, #94DAFF)",
+      "linear-gradient(135deg, #F9D923, #00A19D)",
+      "linear-gradient(135deg, #FF5E7E, #D8B5FF)",
+      "linear-gradient(135deg, #FF9A8B, #FF6A88, #FF99AC)",
+    ];
+
+    let index = 0;
+
+    function changeBackground() {
+      document.body.style.background = backgrounds[index];
+      index = (index + 1) % backgrounds.length;
+    }
+
+    changeBackground();
+    setInterval(changeBackground, 10000);
+  </script>
+
+</body>
+</html>
