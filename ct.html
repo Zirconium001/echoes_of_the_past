@@ -1,0 +1,128 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>CT Website</title>
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      overflow: hidden;
+    }
+
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      transition: background 1s ease;
+      color: white;
+    }
+
+    h1 {
+      font-size: 2.5em;
+      font-weight: bold;
+      margin-bottom: 40px;
+      text-shadow: 0 0 0px rgba(255, 255, 255, 0.3);
+    }
+
+    .special-btn {
+  padding: 15px 30px;
+  margin-bottom: 40px;
+  background: linear-gradient(135deg, #00c6ff, #0072ff);
+  color: white;
+  font-size: 1.1em;
+  font-weight: bold;
+  border-radius: 50px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+  text-align: center;
+  user-select: none;
+  pointer-events: none; /* Makes it unclickable */
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+
+    .button-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 200px);
+      grid-template-rows: auto auto auto;
+      gap: 20px;
+      justify-content: center;
+    }
+
+    .button-grid a.btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+  text-decoration: none;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  padding: 15px 25px;
+  font-size: 1em;
+  font-weight: bold;
+  border-radius: 8px;
+  cursor: pointer;
+  backdrop-filter: blur(6px);
+  transition: all 0.3s ease;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+}
+
+    .button-grid a.btn:hover {
+      background: rgba(255, 255, 255, 0.3);
+      color: black;
+      transform: scale(1.05);
+    }
+
+    .button-grid button:active {
+      transform: scale(0.97);
+    }
+
+    .button-grid .center {
+      grid-column: 1 / span 2;
+      justify-self: center;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Class Test of 1st semester</h1>
+<div class="special-btn"> : _  ALL QUESTIONS  _ : </div>
+
+  <div class="button-grid">
+  <a href="ct1/physicsct.html" target="_blank" class="btn">PHYSICS</a>
+  <a href="ct1/chemistryct.html" target="_blank" class="btn">CHEMISTRY</a>
+  <a href="ct1/mathct.html" target="_blank" class="btn">MATH</a>
+  <a href="ct1/englishct.html" target="_blank" class="btn">ENGLISH</a>
+  <a href="ct1/splct.html" target="_blank" class="btn center">SPL</a>
+</div>
+
+
+  <script>
+    const backgrounds = [
+      "linear-gradient(135deg, #FF6B6B, #FFD93D)",
+      "linear-gradient(135deg, #6BCB77, #4D96FF)",
+      "linear-gradient(135deg, #B983FF, #94DAFF)",
+      "linear-gradient(135deg, #F9D923, #00A19D)",
+      "linear-gradient(135deg, #FF5E7E, #D8B5FF)",
+      "linear-gradient(135deg, #FF9A8B, #FF6A88, #FF99AC)",
+    ];
+
+    let index = 0;
+
+    function changeBackground() {
+      document.body.style.background = backgrounds[index];
+      index = (index + 1) % backgrounds.length;
+    }
+
+    // Initial background
+    changeBackground();
+    setInterval(changeBackground, 10000);
+  </script>
+
+</body>
+</html>
